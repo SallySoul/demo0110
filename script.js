@@ -51,17 +51,11 @@ function createItem() {
   item_div.id = item_name;
   item_div.className = 'dragable';
 
-  var item_header = document.createElement('div');
-  item_header.id = item_name + "header";
-  item_header.className = 'dragableheader';
-  item_header.innerHTML = "Click to move " + item_name;
-
   var item_content = document.createElement('div');
   var item_text = document.createTextNode("Message?");
   item_content.appendChild(item_text);
   item_content.contentEditable = "true";
 
-  item_div.appendChild(item_header);
   item_div.appendChild(item_content);
   document.getElementById("workspace").appendChild(item_div);
   dragElement(item_div);
@@ -82,7 +76,7 @@ function checkTabPress(e) {
   console.log(document.activeElement);
   console.log(e.keyCode);
   console.log(e.keyCode);
-  if (e.keyCode == 16) {
+  if (e.keyCode == 9) {
     createItem();
   }
 }
